@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app = "ShoppingListEventApp">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/Style.css">
+    <title> Event Data </title>
+  </head>
+  <body>
+
+    <h1> Event Data </h1>
+
+    <div ng-controller = "ShoppingListController as list1">
+
+      <input type="text" ng-model = "list1.ItemName" placeholder="Name">
+      <input type="text" ng-model = "list1.ItemQuantity" placeholder="Quantity">
+      <button type="button" ng-click = "list1.addItem();">Add a new Item</button>
+
+      <shopping-List-Component
+                  list-Component = "list1"
+                  title-Component = "{{list1.TitleController}}"
+                  on-remove = "list1.RemoveItem(INDEX_KEY)"
+      ></shopping-List-Component>
+
+    </div>
+
+
+
+    <spinner-component></spinner-component>
+
+    <!-- Libraries -->
+    <script src = "Lib/jQuery-3.1.0.min.js"></script>
+    <script src = "Lib/angular.min.js"></script>
+
+    <script src = "SRC/Spinner/Spinner.module.js"></script>
+    <script src = "SRC/Spinner/Spinner.component.js"></script>
+
+    <script src = "SRC/ShoppingList/ShoppingList.module.js"></script>
+    <script src = "SRC/ShoppingList/ShoppingList.controller.js"></script>
+    <script src = "SRC/ShoppingList/ShoppingList.factory.js"></script>
+    <script src = "SRC/ShoppingList/ShoppingList.component.js"></script>
+    <script src = "SRC/ShoppingList/WeightLossFilterService.service.js"></script>
+
+
+
+
+
+  </body>
+</html>
