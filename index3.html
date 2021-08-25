@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app = "ShoppingListApp">
+  <head>
+    <meta charset="utf-8">
+
+    <script src = "Lib/jQuery-3.1.0.min.js"></script>
+    <script src = "Lib/angular.min.js"></script>
+    <link rel="stylesheet" href="CSS/Style.css">
+
+    <script src = "SRC/Spinner3/Spinner3.module.js"></script>
+    <script src = "SRC/Spinner3/Spinner3.component.js"></script>
+
+    <script src = "SRC/ShoppingList3/ShoppingList3.module.js"></script>
+    <script src = "SRC/ShoppingList3/ShoppingList3.controller.js"></script>
+    <script src = "SRC/ShoppingList3/ShoppingList3.factory.js"></script>
+    <script src = "SRC/ShoppingList3/ShoppingList3.component.js"></script>
+    <script src = "SRC/ShoppingList3/ShoppingList3.WeightLossFilterService.js"></script>
+
+
+
+    <title> Shopping List </title>
+  </head>
+  <body>
+
+    <h1> Shopping List 1 </h1>
+
+    <div class="" ng-controller = "ShoppingListController as list">
+
+      <input type="text" ng-model = "list.ItemName" placeholder="Name">
+      <input type="text" ng-model = "list.ItemQuantity" placeholder="Quantity">
+      <button type="button" ng-click = "list.addItem();" >Add a new Item</button>
+
+
+      <shopping-list
+        list-component = "list"
+        title-component = " {{ list.Title_Controller }} "
+        on-remove = "list.RemoveItem(My_Index)"
+      ><shopping-list>
+
+
+      <!-- <h3> {{ list.Title_Controller}} </h3>
+      <ol>
+        <li ng-repeat = "item in list.getItems">
+          {{ item.quantity }} of {{ item.name }}
+          <button type="button" ng-click = "list.RemoveItem( $index ); ">Remove Item</button>
+        </li>
+      </ol> -->
+    </div>
+
+    <spinner-component></spinner-component>
+
+  </body>
+</html>
